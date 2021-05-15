@@ -20,7 +20,7 @@ def split_animated_gif(gif_file_path):
 pygame.init()
 screen = pygame.display.set_mode((720, 720))
 background = []
-background = split_animated_gif("E:\\Working place\\PROJECT 20202\\Games\\images\\tenor.gif")
+background = split_animated_gif("images/tenor.gif")
 print(background)
 for i in range(0,len(background)):
     background[i] = pygame.transform.scale(background[i], (constants.SIZE, constants.SIZE))

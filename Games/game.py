@@ -18,12 +18,12 @@ def start():
     os.environ['SDL_VIDEO_CENTERED'] = '1'
     clock = pygame.time.Clock()
     FPS = 15
-    background = pygame.image.load("E:\Working place\PROJECT 20202\Games\images\khung.jpg")
+    background = pygame.image.load("images/khung.jpg")
     background.convert()
     background = pygame.transform.scale(background, (constants.SIZE, constants.SIZE))
     mixer.init()
     mixer.set_num_channels(3)
-    mixer.Channel(1).play(mixer.Sound('E:\Working place\PROJECT 20202\Games\music\in-game.mp3'),loops=-1)
+    mixer.Channel(1).play(mixer.Sound('music/in-game.mp3'),loops=-1)
     snake_array = snake.create_snake(constants.snake_len)
     move_direction = constants.move_direction
     length = constants.snake_len
@@ -54,7 +54,7 @@ def start():
         snake_array = snake.move(snake_array,move_direction,length)
         snake_array = snake.snake_count(snake_array)
         if snake_array[length-1]==ball[0]:
-            mixer.Channel(0).play(mixer.Sound('E:\Working place\PROJECT 20202\Games\music\eat.mp3'))
+            mixer.Channel(0).play(mixer.Sound('music/eat.mp3'))
             prev_color = color
             color = random_color()
             snake_array = snake.increase_snake(snake_array,move_direction,length)

@@ -28,14 +28,14 @@ blue=(255, 230, 179)
 yellow=(51, 102, 255)
 
 # Game Fonts
-font = "E:\\Working place\\PROJECT 20202\\Games\\font\\Retro.ttf"
+font = "font/Retro.ttf"
 
 # Game Framerate
 clock = pygame.time.Clock()
 FPS=20
 mixer.init()
 mixer.set_num_channels(3)
-mixer.Channel(2).play(mixer.Sound('E:\Working place\PROJECT 20202\Games\music\intro.mp3'),loops=-1)
+mixer.Channel(2).play(mixer.Sound('music/intro.mp3'),loops=-1)
 
 def split_animated_gif(gif_file_path):
     ret = []
@@ -50,7 +50,7 @@ def split_animated_gif(gif_file_path):
     return ret
 
 background = []
-background = split_animated_gif("E:\\Working place\\PROJECT 20202\\Games\\images\\tenor.gif")
+background = split_animated_gif("images/tenor.gif")
 for i in range(0,len(background)):
     background[i] = pygame.transform.scale(background[i], (constants.SIZE, constants.SIZE))
 
@@ -106,7 +106,7 @@ def main_menu():
                         quit()
         
         if END == True:
-            mixer.Channel(2).play(mixer.Sound('E:\Working place\PROJECT 20202\Games\music\intro.mp3'),loops=-1)
+            mixer.Channel(2).play(mixer.Sound('music/intro.mp3'),loops=-1)
             TEXT = "GAME OVER"
             col = red
             END = False
